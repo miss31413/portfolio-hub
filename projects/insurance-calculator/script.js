@@ -4,12 +4,12 @@ function calculateInsurance() {
     const coverage = parseInt(document.getElementById('coverage').value) || 0;
     
     if (age <= 0 || income <= 0 || coverage <= 0) {
-        alert('請輸入有效的數伐');
+        alert('請輸入有效的數佰');
         return;
     }
     
     // 基於年齡計算保費比率
-    let rate = 0.05; // 基毎
+    let rate = 0.05; // 基毎比率
     if (age < 30) {
         rate = 0.03;
     } else if (age >= 30 && age < 40) {
@@ -22,7 +22,7 @@ function calculateInsurance() {
         rate = 0.10;
     }
     
-    // 基於月薪賊建議頢養
+    // 基於月薪計算建議保障額度
     let suggestedCoverage = Math.round((income * 12) / 100);
     if (suggestedCoverage < coverage) {
         suggestedCoverage = coverage;
